@@ -14,7 +14,7 @@ export const FlipCard = () => {
   });
 
   return (
-    <div style={{ perspective: "500px" }} onClick={() => setFlipped(!flipped)}>
+    <div style={{ perspective: "300px" }} onClick={() => setFlipped(!flipped)}>
       <Card style={styles} />
       <BlueCard style={antiStyles} />
     </div>

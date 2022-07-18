@@ -1,9 +1,10 @@
-import { FlipCard } from "./components/FlipCard";
+import { LoaderComponent } from "./components/Loader";
 
 function App() {
   return (
     <div className="App">
-      <FlipCard />
+      {/* <FlipCard /> */}
+      <LoaderComponent />
     </div>
   );
 }
