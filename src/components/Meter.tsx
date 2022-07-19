@@ -5,7 +5,27 @@ import styled from "styled-components";
 export const MeterComponent = () => {
   const [toggle, setToggle] = useState(false);
   const styles = useSpring({
-    width: toggle ? "100%" : "0%",
+    from: {
+      width: "0%",
+      backgroundColor: "#aaa",
+    },
+    to: async (next) => {
+      if (toggle) {
+        await next({
+          width: "100%",
+        });
+        await next({
+          backgroundColor: "skyblue",
+        });
+      } else {
+        await next({
+          backgroundColor: "#aaa",
+        });
+        await next({
+          width: "0%",
+        });
+      }
+    },
   });
   return (
     <>
