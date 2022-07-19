@@ -9,23 +9,9 @@ export const MeterComponent = () => {
       width: "0%",
       backgroundColor: "#aaa",
     },
-    to: async (next) => {
-      if (toggle) {
-        await next({
-          width: "100%",
-        });
-        await next({
-          backgroundColor: "skyblue",
-        });
-      } else {
-        await next({
-          backgroundColor: "#aaa",
-        });
-        await next({
-          width: "0%",
-        });
-      }
-    },
+    to: toggle
+      ? [{ width: "100%" }, { backgroundColor: "skyblue" }]
+      : [{ backgroundColor: "#aaa" }, { width: "0%" }],
   });
   return (
     <>
